@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    let readingList: [ReadingItem] = ReadingItem.examples
+    
+    @State private var selection: ReadingItem?
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationSplitView {
+            //Side bar
+            ReadingListView(readingList: readingList, selection: $selection)
+        } detail: {
+            //Detail content
+            if let selection{
+                ReadingDetailView(reading: selection)
+            }else{
+                ContentUnavailableView("Please select your book", systemImage: "book")
+            }
         }
-        .padding()
+
     }
 }
 
