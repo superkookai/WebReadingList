@@ -8,13 +8,33 @@
 import SwiftUI
 
 struct ReadingListView: View {
-    let readingList: [ReadingItem]
+    @Bindable var readingDataVM: ReadingDataViewModel
     @Binding var selection: ReadingItem?
+    @State private var newReadingEditorShown: Bool = false
     
     var body: some View {
-        List(readingList, selection: $selection) { item in
+        List($readingDataVM.readingList,
+             editActions: [.move,.delete],
+             selection: $selection) { $item in
             ReadingItemRow(readingItem: item)
                 .tag(item)
+                .swipeActions(edge:.leading) {
+                    Button("Toggle Finished"){
+                        item.hasFinishedReading.toggle()
+                    }
+                }
+        }
+        .toolbar {
+            Button {
+                newReadingEditorShown.toggle()
+            } label: {
+                Image(systemName: "plus")
+            }
+            
+            EditButton()
+        }
+        .sheet(isPresented: $newReadingEditorShown) {
+            ReadingDataEditorView(readingDataVM: readingDataVM)
         }
     }
 }
@@ -40,5 +60,7 @@ fileprivate struct ReadingItemRow: View {
 #Preview {
     @State @Previewable var selection: ReadingItem?
     
-    ReadingListView(readingList: ReadingItem.examples, selection: $selection)
+    NavigationStack {
+        ReadingListView(readingDataVM: ReadingDataViewModel(), selection: $selection)
+    }
 }
