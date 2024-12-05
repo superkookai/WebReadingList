@@ -16,6 +16,7 @@
 		BF9978292D014C3000691553 /* ReadingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF9978282D014C3000691553 /* ReadingListView.swift */; };
 		BF99782B2D014EB300691553 /* ReadingDataEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF99782A2D014EB300691553 /* ReadingDataEditorView.swift */; };
 		BFBB6DD02D018B160056CB7C /* ReadingDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB6DCF2D018B0D0056CB7C /* ReadingDataViewModel.swift */; };
+		BFBB6DD22D01B07D0056CB7C /* TryNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBB6DD12D01B07D0056CB7C /* TryNavigationStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		BF9978282D014C3000691553 /* ReadingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingListView.swift; sourceTree = "<group>"; };
 		BF99782A2D014EB300691553 /* ReadingDataEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingDataEditorView.swift; sourceTree = "<group>"; };
 		BFBB6DCF2D018B0D0056CB7C /* ReadingDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingDataViewModel.swift; sourceTree = "<group>"; };
+		BFBB6DD12D01B07D0056CB7C /* TryNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryNavigationStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				BF9978262D014B9B00691553 /* ReadingDetailView.swift */,
 				BF9978282D014C3000691553 /* ReadingListView.swift */,
 				BF99782A2D014EB300691553 /* ReadingDataEditorView.swift */,
+				BFBB6DD12D01B07D0056CB7C /* TryNavigationStack.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFBB6DD22D01B07D0056CB7C /* TryNavigationStack.swift in Sources */,
 				BFBB6DD02D018B160056CB7C /* ReadingDataViewModel.swift in Sources */,
 				BF99781D2D0140B600691553 /* ContentView.swift in Sources */,
 				BF99781E2D0140B600691553 /* WebReadingListApp.swift in Sources */,
