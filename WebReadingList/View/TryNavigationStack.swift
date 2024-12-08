@@ -9,14 +9,16 @@ import SwiftUI
 
 struct TryNavigationStack: View {
     @State private var colorShown: Color?
+    let colors: [Color] = [.mint,.pink,.teal]
     
     var body: some View {
         NavigationStack{
-            List {
-                Button("Mint") { colorShown = .mint }
-                Button("Pink") { colorShown = .pink }
-                Button("Teal") { colorShown = .teal }
+            List(colors,id:\.self,selection:$colorShown) { color in
+                Text(color.description.capitalized)
+                    .font(.title2)
             }
+            .listStyle(.plain)
+            .navigationTitle("Colors")
             .navigationDestination(item: $colorShown) { color in
                 ColorDetail(color: color)
             }
